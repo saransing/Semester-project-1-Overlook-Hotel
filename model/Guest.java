@@ -8,9 +8,9 @@ public class Guest
   private String nationality;
   private Address address;
   private Date dateOfBirth;
-  private Date date; //required ??
 
-  public Guest(String firstName,String lastName, int phoneNumber, String nationality, Addess address, Date dateOfBirth)
+
+  public Guest(String firstName,String lastName, int phoneNumber, String nationality, Address address, Date dateOfBirth)
   {
     this.firstName=firstName;
     this.lastName=lastName;
@@ -55,18 +55,27 @@ public class Guest
   public void setDateOfBirth(Date dateOfBirth){
   }
 
-  public boolean equals(Object obj){
-    if (!(obj instanceof Guest)){
+  public boolean equals(Object obj)
+  {
+    if (!(obj instanceof Guest))
+    {
       return false;
     }
-    Guest other=(Guest)obj;
-    return other.firstName==firstName&&
-    //Method to be finished.
+    Guest other = (Guest) obj;
+    return firstName == other.firstName
+        && lastName == other.lastName
+        && phoneNumber==other.phoneNumber
+        && nationality==other.nationality
+        && address==other.address
+        && dateOfBirth==other.dateOfBirth;
   }
 
-
   public String toString(){
-    return "Name: "+firstName+" "+lastName+"\n"+ "Phone number: "+phoneNumber+"\n"+"Nationality: "+nationality+"\n"+"Address: "+address+"\n"+"Date of birth: "+dateOfBirth;
+    return "Name: "+firstName+" "+lastName+"\n"
+        + "Phone number: "+phoneNumber+"\n"
+        +"Nationality: "+nationality+"\n"
+        +"Address: "+address+"\n"
+        +"Date of birth: "+dateOfBirth;
   }
 
 }
