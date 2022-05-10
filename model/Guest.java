@@ -14,15 +14,7 @@ public class Guest
   private Address address;
   private Date dateOfBirth;
 
-  /**
-   * Constructor initializing the Guest class variables
-   * @param firstName initializing firstName variable
-   * @param lastName initializing lastName variable
-   * @param phoneNumber initializing phoneNumber variable
-   * @param nationality initializing nationality variable
-   * @param address initializing address variable
-   * @param dateOfBirth initializing dateOfBirth variable
-   */
+
   public Guest(String firstName,String lastName, int phoneNumber, String nationality, Address address, Date dateOfBirth)
   {
     this.firstName=firstName;
@@ -31,7 +23,15 @@ public class Guest
     this.nationality=nationality;
     this.address=address;
     this.dateOfBirth=dateOfBirth;
-  }
+  }/**
+ * Constructor initializing the Guest class variables
+ * @param firstName initializing firstName variable
+ * @param lastName initializing lastName variable
+ * @param phoneNumber initializing phoneNumber variable
+ * @param nationality initializing nationality variable
+ * @param address initializing address variable
+ * @param dateOfBirth initializing dateOfBirth variable
+ */
 
   /**
    * Get first and last name of guest
