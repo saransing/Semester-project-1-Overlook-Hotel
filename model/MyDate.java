@@ -1,4 +1,6 @@
 package model;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 /**
  * A class containing Date variables required to create Date objects
@@ -23,6 +25,7 @@ public class MyDate
     this.month=month;
     this.year=year;
   }
+
 
   /**
    * Get day, will be used in other classes as part of date
@@ -113,11 +116,11 @@ public class MyDate
     return new MyDate(day,month,year);
   }
 
-//  public int numberOfDaysInBooking()
-//  {
-//    DateTimeFormatter dtf= DateTimeFormatter.ofPattern("dd MM yyyy");
-//
-//  }
+  public int getNumberOfDaysBetweenDates()
+  {
+    DateTimeFormatter dtf= DateTimeFormatter.ofPattern("dd MM yyyy");
+
+  }
 
 
 }

@@ -16,14 +16,15 @@ public class Booking
 
   /**
    * Constructor initializing the Booking class variables
-   * @param arrivalDate initializing arrivalDate variable
+   *
+   * @param arrivalDate   initializing arrivalDate variable
    * @param departureDate initializing departureDate variable
-   * @param guests initializing guests variable
-   * @param room initializing room variable
-   * @param bookingID initializing bookingID variable
+   * @param guests        initializing guests variable
+   * @param room          initializing room variable
+   * @param bookingID     initializing bookingID variable
    */
 
-  public Booking(MyDate arrivalDate, MyDate departureDate,GuestList guests,Room room,int bookingID)
+  public Booking(MyDate arrivalDate, MyDate departureDate, GuestList guests, Room room, int bookingID)
   {
     this.arrivalDate = arrivalDate;
     this.departureDate = departureDate;
@@ -32,24 +33,18 @@ public class Booking
     this.bookingID = bookingID;
   }
 
-
   /**
-   * Get Arrival Date of Booking
-   *
-   * @return arrival date
+   * Get arrival date of a Booking
+   * @return arrival date of a Booking
    */
-
-
   public MyDate getArrivalDate()
   {
     return arrivalDate;
   }
 
-
   /**
-   * Get Departure Date of Booking
-   *
-   * @return departure date
+   * Get departure date of a Booking
+   * @return departure date of a Booking
    */
   public MyDate getDepartureDate()
   {
@@ -57,9 +52,8 @@ public class Booking
   }
 
   /**
-   * Get Number of Guests of Booking
-   *
-   * @return guest number
+   * Get guests for a Booking
+   * @return guest of a Booking
    */
 
   public GuestList getGuests()
@@ -68,12 +62,9 @@ public class Booking
   }
 
   /**
-   * Get Room of the Booking
-   *
-   * @return room
+   * Get room of a Booking
+   * @return room of a Booking
    */
-
-
   public Room getRoom()
   {
     return room;
@@ -81,48 +72,47 @@ public class Booking
 
   /**
    * Get Booking ID of the booking
-   *
-   * @return booking ID
+   * @return booking ID of a Booking
    */
-
-
   public int getBookingID()
   {
     return bookingID;
   }
 
   /**
-   * Sets Arrival Date for Booking
-   *
+   * Sets Arrival Date for a Booking
    * @param arrivalDate takes date of arrival in the Booking
    */
-
   public void setArrivalDate(MyDate arrivalDate)
   {
     this.arrivalDate = arrivalDate;
   }
 
   /**
-   * Sets Departure Date for Booking
-   *
-   * @param departureDate takes date of departure in the Booking
+   * Sets Departure Date for a Booking
+   * @param departureDate takes date of departure in a Booking
    */
-
   public void setDepartureDate(MyDate departureDate)
   {
     this.departureDate = departureDate;
   }
 
-
   /**
-   * Sets the number of guests in the booking
-   *
-   * @param guests takes number of guests in the Booking
+   * Sets the array of guests in a Booking
+   * @param guests takes array of guests in a Booking
    */
-
-
   public void setGuests(GuestList guests)
   {
     this.guests = guests;
   }
+
+  /**
+   * Gets total duration of a Booking
+   * @return total duration of a Booking
+   */
+  public int getBookingDuration()
+  {
+   return departureDate.getNumberOfDaysBetweenDates(arrivalDate);
+  }
+
 }

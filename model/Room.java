@@ -24,9 +24,7 @@ public class Room
    * @param status initializing status variable
    * @param roomPrice initializing roomPrice variable
    */
-
-
-  public Room(String roomType,int roomNumber,int NumberOfBeds,boolean status,double roomPrice )
+  public Room(String roomType,int roomNumber,int numberOfBeds,boolean status,double roomPrice )
   {
     this.roomType = roomType;
     this.roomNumber = roomNumber;
@@ -68,49 +66,42 @@ public class Room
     return numberOfBeds;
   }
 
-
-
+  /**
+   *
+   * @return
+   */
   public boolean IsAvailable()
   {
-
+    return status;
   }
 
   /**
    * Get Room Price
    * @return Room Price
    */
-
-
   public double getRoomPrice()
   {
     return roomPrice;
   }
 
 
-
   /**
    * Sets Room Type of a Room
    * @param roomType takes room type of a Room
    */
-
   public void setRoomType(String roomType)
   {
     this.roomType = roomType;
   }
 
-
-
   /**
    * Sets Room Number in a Room
    * @param roomNumber takes room number of Room
    */
-
   public void setRoomNumber(int roomNumber)
   {
     this.roomNumber = roomNumber;
   }
-
-
 
   /**
    * Sets Number of Beds in a Room
@@ -121,8 +112,6 @@ public class Room
     this.numberOfBeds = numberOfBeds;
   }
 
-
-
   /**
    * Sets Status of a Room
    * @param status takes Status of a Room
@@ -132,18 +121,14 @@ public class Room
     this.status = status;
   }
 
-
-
   /**
    * Sets Room Price
    * @param roomPrice takes Room Price
    */
-
   public void setRoomPrice(double roomPrice)
   {
     this.roomPrice = roomPrice;
   }
-
 
   /**
    * Equals method to compare
@@ -158,20 +143,20 @@ public class Room
      }
 
      Room other = (Room)obj;
-     return roomType == other.roomType&&
+     return roomType.equals(other.roomType)&&
          roomNumber==other.roomNumber&&
          numberOfBeds ==other.numberOfBeds&&
          status == other.status&&
          roomPrice == other.roomPrice;
-
    }
+
   /**
    * toString method to return values as string
-   * @return a string containig information about all room objects
+   * @return a string containing information about all room objects
    */
-  @Override public String toString()
+  public String toString()
   {
-    return "Room{" + "roomType='" + roomType + '\'' + ", roomNumber="
+    return "Room{" + "roomType='" + roomType + ", roomNumber="
         + roomNumber + ", numberOfBeds=" + numberOfBeds + ", status=" + status
         + ", roomPrice=" + roomPrice + '}';
   }

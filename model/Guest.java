@@ -9,11 +9,10 @@ public class Guest
 {
   private String firstName;
   private String lastName;
-  private int phoneNumber;
+  private long phoneNumber;
   private String nationality;
   private Address address;
   private MyDate dateOfBirth;
-
 
   /**
    * Constructor initializing the Guest class variables
@@ -24,7 +23,7 @@ public class Guest
    * @param address initializing address variable
    * @param dateOfBirth initializing dateOfBirth variable
    */
-  public Guest(String firstName,String lastName, int phoneNumber, String nationality, Address address, MyDate dateOfBirth)
+  public Guest(String firstName,String lastName, long phoneNumber, String nationality, Address address, MyDate dateOfBirth)
   {
     this.firstName=firstName;
     this.lastName=lastName;
@@ -35,18 +34,28 @@ public class Guest
   }
 
   /**
-   * Get first and last name of a guest
-   * @return first and last name of a guest
+   * Get first name of a guest
+   * @return first name of a guest
    */
-  public String getName(){
-    return firstName+" "+lastName;
+  public String getFirstName()
+  {
+    return firstName;
+  }
+
+  /**
+   * Get last name of a guest
+   * @return last name of a guest
+   */
+  public String getLastName()
+  {
+    return lastName;
   }
 
   /**
    * Get phone number of a guest
    * @return Phone number of a guest
    */
-  public int getPhoneNumber(){
+  public long getPhoneNumber(){
     return phoneNumber;
   }
 
@@ -75,13 +84,20 @@ public class Guest
   }
 
   /**
-   * Sets first and last name of a guest
+   * Sets first of a guest
    * @param firstName takes firstName of a guest
-   * @param lastName takes lastName of a guest
    */
-  public void setName(String firstName, String lastName)
+  public void setFirstName(String firstName)
   {
     this.firstName=firstName;
+  }
+
+  /**
+   * Sets last name of a guest
+   * @param lastName takes lastName of a guest
+   */
+  public void setLastName(String lastName)
+  {
     this.lastName=lastName;
   }
 
@@ -89,7 +105,7 @@ public class Guest
    * Sets Phone number of a guest
    * @param phoneNumber takes phone number of a guest
    */
-  public void setPhoneNumber(int phoneNumber)
+  public void setPhoneNumber(long phoneNumber)
   {
     this.phoneNumber=phoneNumber;
   }
@@ -133,10 +149,10 @@ public class Guest
       return false;
     }
     Guest other = (Guest) obj;
-    return firstName == other.firstName
-        && lastName == other.lastName
+    return firstName.equals(other.firstName)
+        && lastName.equals(other.lastName)
         && phoneNumber==other.phoneNumber
-        && nationality==other.nationality
+        && nationality.equals(other.nationality)
         && address==other.address
         && dateOfBirth==other.dateOfBirth;
   }

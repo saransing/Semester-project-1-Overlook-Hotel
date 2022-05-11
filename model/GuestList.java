@@ -37,22 +37,19 @@ public class GuestList
   }
 
   /**
-   * Gets a Guest object with phone number from the list
+   * Gets a Guest object with given phone number from the list
    * @param phoneNumber the phone number of the Guest object
    * @return the Guest object with the phone number if one exists, else null
    */
-  public Guest searchForGuestByPhoneNumber(int phoneNumber)
+  public Guest searchForGuestByPhoneNumber(long phoneNumber)
   {
     for (int i = 0; i < guests.size(); i++)
     {
-      Guest temp = guests.get(i);
-
-      if (temp.getPhoneNumber().equals(phoneNumber))
+      if (guests.get(i).getPhoneNumber()==phoneNumber)
       {
-        return temp;
+        return guests.get(i);
       }
     }
-
     return null;
   }
 
@@ -66,11 +63,9 @@ public class GuestList
   {
     for (int i = 0; i < guests.size(); i++)
     {
-      Guest temp = guests.get(i);
-
-      if (temp.getName().equals(firstName) && temp.getLastName().equals(lastName))
+      if (guests.get(i).getFirstName().equals(firstName) && guests.get(i).getLastName().equals(lastName))
       {
-        return temp;
+        return guests.get(i);
       }
     }
     return null;
@@ -82,18 +77,7 @@ public class GuestList
    */
   public String toString()
   {
-    {
-      String returnStr = "";
-
-      for (int i = 0; i < guests.size(); i++)
-      {
-        Guest temp = guests.get(i);
-
-        returnStr += temp + "\n";
-      }
-      return returnStr;
-    }
-
+      return guests.toString();
   }
 
   /**

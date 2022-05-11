@@ -76,9 +76,54 @@ public class Address
   }
 
   /**
-   * E
-   * @param obj
-   * @return
+   * Set House number of a Guest
+   * @param houseNumber takes house number of a Guest
+   */
+  public void setHouseNumber(int houseNumber)
+  {
+    this.houseNumber = houseNumber;
+  }
+
+  /**
+   * Set Street number of a Guest
+   * @param streetName takes street number of a Guest
+   */
+  public void setStreetName(String streetName)
+  {
+    this.streetName = streetName;
+  }
+
+  /**
+   * Set city of a Guest
+   * @param city takes city of a Guest
+   */
+  public void setCity(String city)
+  {
+    this.city = city;
+  }
+
+  /**
+   * Set postal code of a Guest
+   * @param postalCode takes postal code of a Guest
+   */
+  public void setPostalCode(int postalCode)
+  {
+    this.postalCode = postalCode;
+  }
+
+  /**
+   * set country of a Guest
+   * @param country takes country of a Guest
+   */
+  public void setCountry(String country)
+  {
+    this.country = country;
+  }
+
+  /**
+   * Equals method to compare two Addresses
+   * @param obj used to compare
+   * @return true or false. If both addresses match, returns true otherwise false.
    */
   public boolean equals(Object obj)
   {
@@ -88,10 +133,10 @@ public class Address
     }
     Address other = (Address) obj;
     return houseNumber == other.houseNumber
-        && streetName == other.streetName
-        && city==other.city
+        && streetName.equals(other.streetName)
+        && city.equals(other.city)
         && postalCode==other.postalCode
-        && country==other.country;
+        && country.equals(other.country);
   }
 
   /**
