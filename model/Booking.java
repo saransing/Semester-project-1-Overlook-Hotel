@@ -8,8 +8,8 @@ package model;
 
 public class Booking
 {
-  private Date arrivalDate;
-  private Date departureDate;
+  private MyDate arrivalDate;
+  private MyDate departureDate;
   private GuestList guests;
   private Room room;
   private int bookingID;
@@ -23,7 +23,7 @@ public class Booking
    * @param bookingID initializing bookingID variable
    */
 
-  public Booking(Date arrivalDate,Date departureDate,GuestList guests,Room room,int bookingID)
+  public Booking(MyDate arrivalDate, MyDate departureDate,GuestList guests,Room room,int bookingID)
   {
     this.arrivalDate = arrivalDate;
     this.departureDate = departureDate;
@@ -40,7 +40,7 @@ public class Booking
    */
 
 
-  public Date getArrivalDate()
+  public MyDate getArrivalDate()
   {
     return arrivalDate;
   }
@@ -51,7 +51,7 @@ public class Booking
    *
    * @return departure date
    */
-  public Date getDepartureDate()
+  public MyDate getDepartureDate()
   {
     return departureDate;
   }
@@ -97,7 +97,7 @@ public class Booking
    * @param arrivalDate takes date of arrival in the Booking
    */
 
-  public void setArrivalDate(Date arrivalDate)
+  public void setArrivalDate(MyDate arrivalDate)
   {
     this.arrivalDate = arrivalDate;
   }
@@ -108,7 +108,7 @@ public class Booking
    * @param departureDate takes date of departure in the Booking
    */
 
-  public void setDepartureDate(Date departureDate)
+  public void setDepartureDate(MyDate departureDate)
   {
     this.departureDate = departureDate;
   }
