@@ -1,5 +1,10 @@
 package model;
 
+/**
+ * A class containing Address variables
+ * @author Saranjeet Singh
+ * @version 1.0
+ */
 public class Address
 {
   private int houseNumber;
@@ -8,6 +13,14 @@ public class Address
   private int postalCode;
   private String country;
 
+  /**
+   * Constructor initializing the Address class variables
+   * @param houseNumber initializing House Number variable
+   * @param streetName initializing Street Name variable
+   * @param city initializing City variable
+   * @param postalCode initializing Postal Code variable
+   * @param country initializing Country variable
+   */
   public Address(int houseNumber, String streetName, String city, int postalCode, String country)
   {
     this.houseNumber=houseNumber;
@@ -17,31 +30,56 @@ public class Address
     this.country=country;
   }
 
+  /**
+   * Gets House Number of a Guest
+   * @return House Number of a Guest
+   */
   public int getHouseNumber()
   {
     return houseNumber;
   }
 
+  /**
+   * Gets Street Name of a Guest
+   * @return Street Name of a Guest
+   */
   public String getStreetName()
   {
     return streetName;
   }
 
+  /**
+   * Gets City of a Guest
+   * @return City of a Guest
+   */
   public String getCity()
   {
     return city;
   }
 
+  /**
+   * Get Postal code of a Guest
+   * @return Postal code of a Guest
+   */
   public int getPostalCode()
   {
     return postalCode;
   }
 
+  /**
+   * Get Country of a Guest
+   * @return Country of a Guest
+   */
   public String getCountry()
   {
     return country;
   }
 
+  /**
+   * E
+   * @param obj
+   * @return
+   */
   public boolean equals(Object obj)
   {
     if (!(obj instanceof Address))
@@ -56,6 +94,10 @@ public class Address
         && country==other.country;
   }
 
+  /**
+   * Gets a String representation of the Address class
+   * @return a String containing information about all Address objects
+   */
   public String toString()
   {
     return "House Number: "+houseNumber+"\n"
