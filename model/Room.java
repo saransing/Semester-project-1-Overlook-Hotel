@@ -37,11 +37,8 @@ public class Room
 
   /**
    * Get Room Type
-   *
    * @return room type
    */
-
-
   public String getRoomType()
   {
     return roomType;
@@ -51,7 +48,6 @@ public class Room
 
   /**
    * Get Room Number
-   *
    * @return room number
    */
 
@@ -63,7 +59,6 @@ public class Room
 
   /**
    * Get Number of beds
-   *
    * @return number of beds
    */
 
@@ -82,7 +77,6 @@ public class Room
 
   /**
    * Get Room Price
-   *
    * @return Room Price
    */
 
@@ -96,7 +90,6 @@ public class Room
 
   /**
    * Sets Room Type of a Room
-   *
    * @param roomType takes room type of a Room
    */
 
@@ -109,7 +102,6 @@ public class Room
 
   /**
    * Sets Room Number in a Room
-   *
    * @param roomNumber takes room number of Room
    */
 
@@ -122,7 +114,6 @@ public class Room
 
   /**
    * Sets Number of Beds in a Room
-   *
    * @param numberOfBeds takes Number of Beds in a Room
    */
   public void setNumberOfBeds(int numberOfBeds)
@@ -134,7 +125,6 @@ public class Room
 
   /**
    * Sets Status of a Room
-   *
    * @param status takes Status of a Room
    */
   public void setStatus(boolean status)
@@ -146,7 +136,6 @@ public class Room
 
   /**
    * Sets Room Price
-   *
    * @param roomPrice takes Room Price
    */
 
@@ -158,7 +147,6 @@ public class Room
 
   /**
    * Equals method to compare
-   *
    * @param obj used to compare
    * @return If both guests math returns true, otherwise returns false.
    */
@@ -179,7 +167,6 @@ public class Room
    }
   /**
    * toString method to return values as string
-   *
    * @return a string containig information about all room objects
    */
   @Override public String toString()
