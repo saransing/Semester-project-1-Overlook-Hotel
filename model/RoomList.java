@@ -5,71 +5,87 @@ import java.util.ArrayList;
 public class RoomList
 {
   private int numberOfRooms;
-  private ArrayList<Room>list;
+  private ArrayList<Room> rooms;
 
-
+  /**
+   *
+   * @param numberOfRooms
+   */
   public RoomList(int numberOfRooms)
   {
     this.numberOfRooms = numberOfRooms;
-
-    list = new ArrayList<>();
+    rooms = new ArrayList<>();
   }
 
+  public RoomList()
+  {
+
+  }
   public void addRoom(Room room)
   {
-    if(list.size()<=numberOfRooms)
+    if(rooms.size()<=numberOfRooms)
     {
       return;
     }
-    list.add(room);
+    rooms.add(room);
   }
 
   public void deleteRoom(Room room)
   {
-   list.remove(room);
+    if(rooms.contains(room))
+    rooms.remove(room);
   }
 
-  public Room[] searchForRoomByRoomNumber(int roomNumber)
+  public Room searchForRoomByRoomNumber(int roomNumber)
   {
-   ArrayList<Room>temp = new ArrayList<>();
-
-   for(int i=0; i<list.size();i++)
-   {
-     if(list.get(i).getRoomNumber()==roomNumber){
-       temp.add(list.get(i));
-     }
-   }
-
-   return temp.toArray(new Room[0]);
-  }
-
-  public Room[] searchForRoomByRoomType(String roomType)
-  {
-    ArrayList<Room>temp = new ArrayList<>();
-
-    for(int i=0; i<list.size();i++)
+    for (int i = 0; i < rooms.size(); i++)
     {
-      if(list.get(i).getRoomType().equals(roomType)){
-        temp.add(list.get(i));
+      if (rooms.get(i).getRoomNumber() == roomNumber)
+      {
+        return rooms.get(i);
       }
     }
-
-    return temp.toArray(new Room[0]);
+    return null;
   }
 
-
-
+  public ArrayList<Room> searchForRoomByRoomType(String roomType)
+  {
+    ArrayList<Room> temp = new ArrayList<>();
+    for(int i = 0; i< rooms.size(); i++)
+    {
+      if (rooms.get(i).getRoomType().equals(roomType))
+      {
+        temp.add(rooms.get(i));
+      }
+    }
+    return temp;
+  }
 
 public String toString() {
     StringBuilder value = new StringBuilder();
 
-  for (Room room : list)
+  for (Room room : rooms)
   {
     value.append(room.toString()).append("\n");
   }
-
   return value.toString();
 }
 
+  /**
+   *
+   * @return
+   */
+  public int getNumberOfRooms()
+  {
+    return rooms.size();
+  }
 
+  public double getPriceByRoomType(String roomType){
+    for(int i=0; i<rooms.size(); i++){
+      if (rooms.get(i).getRoomType().equals(roomType)){
+        return rooms.get(i).getRoomPrice();
+      }
+    }
+    return -1;
+    }
 }

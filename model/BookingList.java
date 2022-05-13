@@ -15,7 +15,30 @@ public class BookingList
     bookings = new ArrayList<Booking>();
   }
 
+  /**
+   *
+   * @param booking
+   */
+  public void addBooking(Booking booking)
+  {
+    if (!(bookings.contains(booking)))
+    {
+    bookings.add(booking);
+  }
+  }
+
+  public void removeBooking(Booking booking)
+  {
+    if (bookings.contains(booking))
+    {
+      bookings.remove(booking);
+    }
+  }
 
 
+  public double guestCheckOut(){
+    return (room.getRoomPrice() * getBookingDuration()) - (getDiscount() * (room.getRoomPrice()*getBookingDuration())/100));
+
+  }
 
 }

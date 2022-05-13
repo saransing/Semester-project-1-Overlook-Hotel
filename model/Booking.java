@@ -1,4 +1,7 @@
 package model;
+
+import java.text.SimpleDateFormat;
+
 /**
  *A class containing Room variables and methods needed for booking
  * @author Filip
@@ -13,6 +16,7 @@ public class Booking
   private GuestList guests;
   private Room room;
   private int bookingID;
+  private double discount;
 
   /**
    * Constructor initializing the Booking class variables
@@ -79,6 +83,15 @@ public class Booking
     return bookingID;
   }
 
+  public double getDiscount()
+  {
+    return discount;
+  }
+
+  public void setDiscount(double discount)
+  {
+    this.discount=discount;
+  }
   /**
    * Sets Arrival Date for a Booking
    * @param arrivalDate takes date of arrival in the Booking
@@ -112,7 +125,25 @@ public class Booking
    */
   public int getBookingDuration()
   {
-   return departureDate.getNumberOfDaysBetweenDates(arrivalDate);
+    SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
+    //   try {
+    //     int count = 0;
+    //     for(int i=0; i<365; i++){
+    //       if(arrivalDate.equals(departureDate)){
+    //         return count;
+    //       }else{
+    //         arrivalDate.;
+    //         count++;
+    //       }
+    //     }
+    //   }catch (ParseException e) {
+    //     e.printStackTrace();
+    //   }
+    //   return -1;
+    // }
   }
+
+
+
 
 }

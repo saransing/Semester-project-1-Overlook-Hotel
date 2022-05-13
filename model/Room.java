@@ -17,6 +17,7 @@ public class Room
   private boolean status;
   private double roomPrice;
 
+
   /**
    * Constructor initializing the Room class variables
    * @param roomType initializing roomType variable

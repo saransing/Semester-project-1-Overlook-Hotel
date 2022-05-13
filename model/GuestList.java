@@ -84,7 +84,7 @@ public class GuestList
    * Gets how many Guest objects are in the list.
    * @return the number of Guest objects in the list
    */
-  public int numberOfGuests()
+  public int getNumberOfGuests()
   {
     return guests.size();
   }
