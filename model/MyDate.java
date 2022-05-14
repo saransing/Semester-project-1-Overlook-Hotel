@@ -117,14 +117,9 @@ public class MyDate
     return new MyDate(day,month,year);
   }
 
-//  public int getNumberOfDaysBetweenDates()
-//  {
-//    DateTimeFormatter dtf= DateTimeFormatter.ofPattern("dd MM yyyy");
-//    String date1 = dtf.format(arrivalOne);
-//    String date2 = dtf.format(arrivalTwo);
-//
-//
-//  }
+
+
+
 
 
 }

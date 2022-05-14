@@ -35,9 +35,8 @@ public class BookingList
     }
   }
 
-
   public double guestCheckOut(){
-    return (room.getRoomPrice() * getBookingDuration()) - (getDiscount() * (room.getRoomPrice()*getBookingDuration())/100));
+    return (room.getRoomPrice() * getBookingDuration()) - (getDiscount() * (room.getRoomPrice()*getBookingDuration())/100);
 
   }
 
