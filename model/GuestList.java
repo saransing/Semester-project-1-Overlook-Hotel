@@ -70,6 +70,10 @@ public class GuestList
     }
     return null;
   }
+  public Guest getMainGuest()
+  {
+    return guests.get(0);
+  }
 
   /**
    * Gets a String representation of the GuestList.
