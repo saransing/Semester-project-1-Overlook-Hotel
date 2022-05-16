@@ -2,6 +2,7 @@ package model;
 import utils.MyFileHandler;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class HotelModelManager
 {
@@ -28,12 +29,12 @@ public class HotelModelManager
    *
    * @return object with list of all bookings
    */
-  public BookingList getAllBookings()
+  public ArrayList<BookingList> getAllBookings()
   {
-    BookingList allBookings = new BookingList();
+    ArrayList<BookingList> allBookings = new ArrayList<>();
     try
     {
-      allBookings = (BookingList) MyFileHandler.readFromBinaryFile(
+      allBookings = MyFileHandler.readFromBinaryFile(
           bookingListFile);
     }
     catch (FileNotFoundException e)
@@ -60,7 +61,7 @@ public class HotelModelManager
   public BookingList searchBookingByPhoneNumber(String byNumber)
   {
     BookingList searchBookingByPhoneNumber = new BookingList();
-    BookingList allBookings = getAllBookings();
+    ArrayList<BookingList> allBookings = getAllBookings();
 
     for (int i = 0; i < allBookings.size(); i++)
     {
