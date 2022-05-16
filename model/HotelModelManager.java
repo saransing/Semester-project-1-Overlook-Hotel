@@ -136,6 +136,6 @@ public class HotelModelManager
     for (int i = 0; i < allBooking.size(); i++)
     {
 
-  }
+    }
 
-}
+  }
