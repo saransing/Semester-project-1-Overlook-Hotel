@@ -116,10 +116,4 @@ public class MyDate
   {
     return new MyDate(day,month,year);
   }
-
-
-
-
-
-
 }
