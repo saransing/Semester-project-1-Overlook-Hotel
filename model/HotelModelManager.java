@@ -11,19 +11,21 @@ public class HotelModelManager
 
   /**
    * Constructor initializing the Hotel Model Manager
-   * @param guestListFile initializing Guest List File
+   *
+   * @param guestListFile   initializing Guest List File
    * @param bookingListFile initializing Booking List File
-   * @param roomListFile initializing Room List File
+   * @param roomListFile    initializing Room List File
    */
-  public HotelModelManager(String guestListFile,String bookingListFile, String roomListFile)
+  public HotelModelManager(String guestListFile, String bookingListFile, String roomListFile)
   {
-    this.guestListFile=guestListFile;
-    this.bookingListFile=bookingListFile;
-    this.roomListFile=roomListFile;
+    this.guestListFile = guestListFile;
+    this.bookingListFile = bookingListFile;
+    this.roomListFile = roomListFile;
   }
 
   /**
    * Method to create an object of booking list array list
+   *
    * @return object with list of all bookings
    */
   public BookingList getAllBookings()
@@ -31,7 +33,8 @@ public class HotelModelManager
     BookingList allBookings = new BookingList();
     try
     {
-      allBookings = (BookingList) MyFileHandler.readFromBinaryFile(bookingListFile);
+      allBookings = (BookingList) MyFileHandler.readFromBinaryFile(
+          bookingListFile);
     }
     catch (FileNotFoundException e)
     {
@@ -50,6 +53,7 @@ public class HotelModelManager
 
   /**
    * Method to search a booking by phone number
+   *
    * @param byNumber takes phone number
    * @return list of bookings filterd by phone number
    */
@@ -58,9 +62,9 @@ public class HotelModelManager
     BookingList searchBookingByPhoneNumber = new BookingList();
     BookingList allBookings = getAllBookings();
 
-    for(int i = 0; i < allBookings.size(); i++)
+    for (int i = 0; i < allBookings.size(); i++)
     {
-      if(allBookings.get(i).getCountry().equals(byNumber))
+      if (allBookings.get(i).getCountry().equals(byNumber))
       {
         searchBookingByPhoneNumber.add(allBookings.get(i));
       }
@@ -70,6 +74,7 @@ public class HotelModelManager
 
   /**
    * Method to save all Bookings in a Binary file
+   *
    * @param bookings takes booking data to be saved to Booking List file
    */
   public void saveBookings(BookingList bookings)
@@ -90,6 +95,7 @@ public class HotelModelManager
 
   /**
    * Method to save all Rooms data in a Binary file
+   *
    * @param rooms room data to be saved to Room List file
    */
   public void saveRoomsList(RoomList rooms)
@@ -110,6 +116,7 @@ public class HotelModelManager
 
   /**
    * Method to save all guests data in a Binary file
+   *
    * @param guests room data to be saved to Guest List file
    */
   public void saveGuestList(GuestList guests)
@@ -128,7 +135,6 @@ public class HotelModelManager
     }
   }
 
-
   public void removeBookingByID(int bookingID)
   {
     BookingList allBooking = getAllBookings();
@@ -139,3 +145,4 @@ public class HotelModelManager
     }
 
   }
+}
