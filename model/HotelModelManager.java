@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 public class HotelModelManager
 {
+  private static int bookingId = 1;
   private String guestListFile;
   private String bookingListFile;
   private String roomListFile;
@@ -185,6 +186,19 @@ public class HotelModelManager
     }
   }
 
+  /**
+   * Method to delete a booking object from BookingList
+   * @param booking Booking object to be removed
+   */
+
+  public void removeBooking(Booking booking)
+  {
+    BookingList allBooking = getAllBookings();
+
+    allBooking.removeBooking(booking);
+    saveBookings(allBooking);
+  }
+
 
   public void removeBookingByID(int bookingID)
   {
@@ -199,27 +213,101 @@ public class HotelModelManager
       }
     }
     saveBookings(allBooking);
-
   }
 
-  public BookingList getArrivalsByDate()
+  public BookingList getArrivalsByDate(MyDate date)
   {
-    BookingList getArrivalsByDate = new BookingList();
+    BookingList arrivalsByDate = new BookingList();
     BookingList allBookings = getAllBookings();
 
     for (int i = 0; i < allBookings.size(); i++)
     {
-      if(allBookings)
-
+      if(allBookings.getBookingByIndex(i).getArrivalDate().equals(date))
+      {
+        arrivalsByDate.addBooking(allBookings.getBookingByIndex(i));
+      }
     }
+    return arrivalsByDate;
+  }
+
+  public BookingList getDeparturesByDate(MyDate date)
+  {
+    BookingList departuresByDate = new BookingList();
+    BookingList allBookings = getAllBookings();
+
+    for (int i = 0; i < allBookings.size(); i++)
+    {
+      if(allBookings.getBookingByIndex(i).getDepartureDate().equals(date))
+      {
+        departuresByDate.addBooking(allBookings.getBookingByIndex(i));
+      }
+    }
+    return departuresByDate;
   }
 
   public BookingList getTodaysArrivals()
   {
-    BookingList getArrivalsByDate = new BookingList();
-    BookingList allBookings = getAllBookings();
     LocalDate currentDate = LocalDate.now();
 
+    return getArrivalsByDate(new MyDate(currentDate.getDayOfMonth(),currentDate.getMonthValue(),currentDate.getYear()));
+  }
 
+  public BookingList getTodaysDepartures()
+  {
+    LocalDate currentDate = LocalDate.now();
+    return getDeparturesByDate(new MyDate(currentDate.getDayOfMonth(),currentDate.getMonthValue(),currentDate.getYear()));
+  }
+
+  public RoomList getAvailableRooms(MyDate arrivalDate2, MyDate departureDate2)
+  {
+    BookingList allBookings = getAllBookings();
+    RoomList availableRooms = getAllRooms();
+    for (int i = 0; i < allBookings.size(); i++)
+    {
+      if ((allBookings.getBookingByIndex(i).getArrivalDate().isBefore(departureDate2) ||
+            (allBookings.getBookingByIndex(i).getArrivalDate().equals(departureDate2)))
+          &&
+          (allBookings.getBookingByIndex(i).getDepartureDate().isAfter(arrivalDate2) ||
+              (allBookings.getBookingByIndex(i).getArrivalDate().equals(arrivalDate2))))
+      {
+        availableRooms.removeRoom(allBookings.getBookingByIndex(i).getRoom());
+      }
+    }
+    return availableRooms;
+  }
+
+  //doesnt make sense
+  public boolean doDatesOverlap(MyDate arrivalDate1, MyDate departureDate1, MyDate arrivalDate2, MyDate departureDate2)
+  {
+    BookingList allBookings = getAllBookings();
+    RoomList availableRooms = getAllRooms();
+    for (int i = 0; i < allBookings.size(); i++)
+    {
+      if (allBookings.getBookingByIndex(i).getArrivalDate().isBefore(departureDate2) &&
+      allBookings.getBookingByIndex(i).getDepartureDate().isAfter(arrivalDate2))
+      {
+        availableRooms.removeRoom(allBookings.getBookingByIndex(i).getRoom());
+        return true;
+      }
+    }
+    return false;
+
+  }
+
+  public void addBooking(MyDate arrivalDate, MyDate departureDate, Guest guest, Room room)
+  {
+    BookingList allBookings = getAllBookings();
+    GuestList newGuestList = new GuestList();
+    newGuestList.addGuest(guest);
+
+    RoomList availableRooms = getAvailableRooms(arrivalDate, departureDate);
+    if (availableRooms.contains(room))
+    {
+      allBookings.addBooking(
+          new Booking(arrivalDate, departureDate, newGuestList, room, bookingId));
+      bookingId += 1;
     }
   }
+
+
+}

@@ -30,7 +30,7 @@ public class RoomList
     rooms.add(room);
   }
 
-  public void deleteRoom(Room room)
+  public void removeRoom(Room room)
   {
     if(rooms.contains(room))
     rooms.remove(room);
