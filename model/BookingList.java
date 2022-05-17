@@ -61,4 +61,14 @@ public class BookingList
     return returnStr;
   }
 
+  public ArrayList<String> toXMLArray()
+  {
+    ArrayList<String> xmlArray = new ArrayList<>();
+    for (int i = 0; i < bookings.size(); i++)
+    {
+      xmlArray.add(bookings.get(i).toXML());
+    }
+    return xmlArray;
+  }
+
 }

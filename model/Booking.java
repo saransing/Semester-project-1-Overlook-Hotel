@@ -133,4 +133,15 @@ public class Booking
     // }
     return 1;
   }
+  public String toXML() {
+    String XML = String.format("<booking>\n"
+            + "\t<bookingID>%d</bookingID>\n"
+            + "\t<arrivalDate>%s</arrivalDate>\n"
+            + "\t<departureDate>%s</departureDate>\n"
+            + "\t%s\n"
+            + "</booking>",
+        bookingID,arrivalDate.toString(), departureDate.toString(), room.toXML());
+
+    return XML;
+  }
 }

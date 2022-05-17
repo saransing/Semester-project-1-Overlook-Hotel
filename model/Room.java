@@ -135,6 +135,19 @@ public class Room
         + roomNumber +  ", status=" + status
         + ", roomPrice=" + roomPrice + '}';
   }
+
+
+  public Object toXML()
+  {
+    String XML = String.format("<room>\n"
+            + "\t<roomType>%s</roomType>\n"
+            + "\t<roomNumber>%d</roomNumber>\n"
+            + "\t<roomPrice>%f</roomPrice>\n"
+            + "</room>",
+        roomType,roomNumber,roomPrice);
+
+    return XML;
+  }
 }
 
 
