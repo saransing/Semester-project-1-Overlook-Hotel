@@ -16,7 +16,6 @@ public class Booking
   private GuestList guests;
   private Room room;
   private int bookingID;
-  private double discount;
 
   /**
    * Constructor initializing the Booking class variables
@@ -83,15 +82,6 @@ public class Booking
     return bookingID;
   }
 
-  public double getDiscount()
-  {
-    return discount;
-  }
-
-  public void setDiscount(double discount)
-  {
-    this.discount=discount;
-  }
   /**
    * Sets Arrival Date for a Booking
    * @param arrivalDate takes date of arrival in the Booking
