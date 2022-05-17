@@ -133,11 +133,4 @@ public class Booking
     // }
     return 1;
   }
-
-
-  public double guestCheckOut(){
-    return ((room.getRoomPrice() * getBookingDuration()) - (getDiscount() * (room.getRoomPrice()*getBookingDuration())/100));
-
-  }
-
 }
