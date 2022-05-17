@@ -1,0 +1,16 @@
+/* Saran */
+body {
+    background-color: rgb(240, 234, 234);
+}
+
+.row {
+    padding-bottom: 40px;
+}
+
+.heading {
+    padding-bottom: 8%;
+}
+
+img {
+    border-radius: 10px;
+}

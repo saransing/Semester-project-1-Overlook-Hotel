@@ -1,0 +1,146 @@
+/*Anushri*/
+body{
+    font-family: 'Barlow Semi Condense';
+    color: rgb(240, 234, 234);
+}
+.centered{
+position:absolute;
+top: 45%;
+bottom: 70%;
+left: 30%;
+font-size: xx-large;
+}
+#banner{
+    background-image: url("../images/lobby.png");
+    color:white; 
+    padding-top: 5%;
+    overflow:hidden;
+}   
+.title{
+    font-size: 40px;
+    font-weight: 600;
+    margin-top: 100px;
+    font-family: 'Barlow Semi Condensed';
+    padding-left: 50px;
+}
+.top-text
+{
+    padding-left: 50px;
+}
+.play-btn
+{
+    width: 45px;
+    margin: 20px;
+    height: 45px;
+}
+#banner a{
+    color: white;
+    text-decoration: none;
+}
+.img-fluid{
+    height: 400px;
+}
+.bottom-img
+{
+    width: 100%;
+    height: 100px;
+}
+#contacts
+{
+    padding: 80px 0;
+}
+.contact-img1
+{
+    width:150px;
+    height: 150px;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+.contact-img2
+{
+    width:150px;
+    height: 150px;
+    margin-top: 20px;
+    margin-left: 5px;
+}
+.contact-img3
+{
+    width:150px;
+    height: 150px;
+    margin-top: 20px;
+    margin-left: 5px;
+}
+.link1
+{
+    text-decoration: none;
+    color: black;
+}
+
+.card-img-top
+{
+    height: 280px;
+    width: 280px;
+    align-content: center;
+}
+
+.ContactUs {
+    font-weight: lighter;
+    font-family: Arial Narrow, Arial, sans-serif;
+    color: #596aa7;
+    clear: both;
+    float: center;
+    margin-left:11%;
+    margin-top: 20%;
+}
+.mt-4
+{
+    background-image: url("../images/newsletter.jpg");
+}
+.container-fluid {
+    position: relative;
+  }
+  
+  .text-block {
+    position: absolute;
+    bottom: 100px;
+    right: 800px;
+    background-color: black;
+    color: white;
+    padding-left: 100px;
+    padding-top: 100px;
+    padding-right: 100px;
+    padding-bottom: 100px;
+  }
+  .img1 
+  {
+      height: 300px;
+  }
+  .map-container-2{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:150px;
+    width:fit-content;
+  }
+  .map-container-2 iframe{
+    height:150px;
+    width:fit-content;
+    position:absolute;
+  }
+
+  .stuff {
+    justify-content: center;
+  }
+  .map-responsive{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+}
+.map-responsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
