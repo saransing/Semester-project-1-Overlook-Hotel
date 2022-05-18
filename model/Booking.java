@@ -1,5 +1,6 @@
 package model;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
 /**
@@ -113,26 +114,19 @@ public class Booking
    * Gets total duration of a Booking
    * @return total duration of a Booking
    */
-  public int getBookingDuration()
-  {
+  public int getBookingDuration() {
     SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
-    //   try {
-    //     int count = 0;
-    //     for(int i=0; i<365; i++){
-    //       if(arrivalDate.equals(departureDate)){
-    //         return count;
-    //       }else{
-    //         arrivalDate.;
-    //         count++;
-    //       }
-    //     }
-    //   }catch (ParseException e) {
-    //     e.printStackTrace();
-    //   }
-    //   return -1;
-    // }
-    return 1;
+    int count = 0;
+    for (int i = 0; i < 365; i++) { //Still to be fixed.
+      if (arrivalDate.equals(departureDate)) {
+        return count;
+      } else {
+        count++;
+      }
+    }
+    return count;
   }
+
   public String toXML() {
     String XML = String.format("<booking>\n"
             + "\t<bookingID>%d</bookingID>\n"

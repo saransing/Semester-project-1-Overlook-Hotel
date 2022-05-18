@@ -137,7 +137,7 @@ public class Room
   }
 
 
-  public Object toXML()
+  public String toXML()
   {
     String XML = String.format("<room>\n"
             + "\t<roomType>%s</roomType>\n"

@@ -28,7 +28,7 @@ public class Run
 
     System.out.println(booking.toXML());
 
-    FileOutputStream fileOut = new FileOutputStream("C:\\Users\\filip\\Desktop\\Faks\\Alah\\Sep\\Website\\Xml\\Xml.xml");
+    FileOutputStream fileOut = new FileOutputStream("Xml.xml");
     PrintWriter write = new PrintWriter(fileOut);
     write.println(bookingList.toXMLArray());
     write.close();
