@@ -12,8 +12,6 @@ public class MyDate
   private int day;
   private int month;
   private int year;
-  String arrivalOne;
-  String arrivalTwo;
   /**
    * Constructor initializing the Date class variables
    * @param day initializing day variable
@@ -26,7 +24,6 @@ public class MyDate
     this.month=month;
     this.year=year;
   }
-
 
   /**
    * Get day, will be used in other classes as part of date
@@ -116,4 +113,23 @@ public class MyDate
   {
     return new MyDate(day,month,year);
   }
+  public boolean isBefore(MyDate date)
+  {
+    if (year < date.year || (year == date.year && month < date.month) ||
+        (year == date.year && month == date.month && day < date.day))
+    {
+      return true;
+    }
+    return false;
+  }
+  public boolean isAfter(MyDate date)
+  {
+    if (year > date.year || (year == date.year && month > date.month) ||
+        (year == date.year && month == date.month && day > date.day))
+    {
+      return true;
+    }
+    return false;
+  }
+
 }

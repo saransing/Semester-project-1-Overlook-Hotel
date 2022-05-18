@@ -1,5 +1,6 @@
 package model;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
 /**
@@ -16,7 +17,6 @@ public class Booking
   private GuestList guests;
   private Room room;
   private int bookingID;
-  private double discount;
 
   /**
    * Constructor initializing the Booking class variables
@@ -83,15 +83,6 @@ public class Booking
     return bookingID;
   }
 
-  public double getDiscount()
-  {
-    return discount;
-  }
-
-  public void setDiscount(double discount)
-  {
-    this.discount=discount;
-  }
   /**
    * Sets Arrival Date for a Booking
    * @param arrivalDate takes date of arrival in the Booking
@@ -123,30 +114,28 @@ public class Booking
    * Gets total duration of a Booking
    * @return total duration of a Booking
    */
-  public int getBookingDuration()
-  {
+  public int getBookingDuration() {
     SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
-    //   try {
-    //     int count = 0;
-    //     for(int i=0; i<365; i++){
-    //       if(arrivalDate.equals(departureDate)){
-    //         return count;
-    //       }else{
-    //         arrivalDate.;
-    //         count++;
-    //       }
-    //     }
-    //   }catch (ParseException e) {
-    //     e.printStackTrace();
-    //   }
-    //   return -1;
-    // }
+    int count = 0;
+    for (int i = 0; i < 365; i++) { //Still to be fixed.
+      if (arrivalDate.equals(departureDate)) {
+        return count;
+      } else {
+        count++;
+      }
+    }
+    return count;
   }
 
+  public String toXML() {
+    String XML = String.format("<booking>\n"
+            + "\t<bookingID>%d</bookingID>\n"
+            + "\t<arrivalDate>%s</arrivalDate>\n"
+            + "\t<departureDate>%s</departureDate>\n"
+            + "\t%s\n"
+            + "</booking>",
+        bookingID,arrivalDate.toString(), departureDate.toString(), room.toXML());
 
-  public double guestCheckOut(){
-    return (room.getRoomPrice() * getBookingDuration()) - (getDiscount() * (room.getRoomPrice()*getBookingDuration())/100));
-
+    return XML;
   }
-
 }

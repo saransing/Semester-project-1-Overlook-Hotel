@@ -8,15 +8,12 @@ import java.util.Objects;
  * @version 1.0
  */
 
-
 public class Room
 {
   private String roomType;
   private int roomNumber;
-  private  int numberOfBeds;
   private boolean status;
   private double roomPrice;
-
 
   /**
    * Constructor initializing the Room class variables
@@ -25,11 +22,10 @@ public class Room
    * @param status initializing status variable
    * @param roomPrice initializing roomPrice variable
    */
-  public Room(String roomType,int roomNumber,int numberOfBeds,boolean status,double roomPrice )
+  public Room(String roomType,int roomNumber,boolean status,double roomPrice )
   {
     this.roomType = roomType;
     this.roomNumber = roomNumber;
-    this.numberOfBeds = numberOfBeds;
     this.status = status;
     this.roomPrice = roomPrice;
   }
@@ -53,18 +49,6 @@ public class Room
   public int getRoomNumber()
   {
     return roomNumber;
-  }
-
-
-  /**
-   * Get Number of beds
-   * @return number of beds
-   */
-
-
-  public int getNumberOfBeds()
-  {
-    return numberOfBeds;
   }
 
   /**
@@ -105,15 +89,6 @@ public class Room
   }
 
   /**
-   * Sets Number of Beds in a Room
-   * @param numberOfBeds takes Number of Beds in a Room
-   */
-  public void setNumberOfBeds(int numberOfBeds)
-  {
-    this.numberOfBeds = numberOfBeds;
-  }
-
-  /**
    * Sets Status of a Room
    * @param status takes Status of a Room
    */
@@ -146,7 +121,6 @@ public class Room
      Room other = (Room)obj;
      return roomType.equals(other.roomType)&&
          roomNumber==other.roomNumber&&
-         numberOfBeds ==other.numberOfBeds&&
          status == other.status&&
          roomPrice == other.roomPrice;
    }
@@ -158,8 +132,21 @@ public class Room
   public String toString()
   {
     return "Room{" + "roomType='" + roomType + ", roomNumber="
-        + roomNumber + ", numberOfBeds=" + numberOfBeds + ", status=" + status
+        + roomNumber +  ", status=" + status
         + ", roomPrice=" + roomPrice + '}';
+  }
+
+
+  public String toXML()
+  {
+    String XML = String.format("<room>\n"
+            + "\t<roomType>%s</roomType>\n"
+            + "\t<roomNumber>%d</roomNumber>\n"
+            + "\t<roomPrice>%f</roomPrice>\n"
+            + "</room>",
+        roomType,roomNumber,roomPrice);
+
+    return XML;
   }
 }
 

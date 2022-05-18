@@ -30,7 +30,7 @@ public class RoomList
     rooms.add(room);
   }
 
-  public void deleteRoom(Room room)
+  public void removeRoom(Room room)
   {
     if(rooms.contains(room))
     rooms.remove(room);
@@ -88,4 +88,14 @@ public String toString() {
     }
     return -1;
     }
+
+  public ArrayList<String> toXMLArray()
+  {
+    ArrayList<String> xmlArray = new ArrayList<>();
+    for (int i = 0; i < rooms.size(); i++)
+    {
+      xmlArray.add(rooms.get(i).toXML());
+    }
+    return xmlArray;
+  }
 }
