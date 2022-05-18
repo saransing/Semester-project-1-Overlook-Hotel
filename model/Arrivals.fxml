@@ -11,20 +11,21 @@
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
          <children>
-            <Label layoutX="211.0" layoutY="19.0" prefHeight="17.0" prefWidth="247.0" text="Today's Arrivals and Departures">
+            <Label layoutX="143.0" layoutY="16.0" prefHeight="45.0" prefWidth="455.0" text="Today's Arrivals and Departures">
                <font>
-                  <Font name="Damascus Regular" size="13.0" />
+                  <Font name="Bodoni 72 Oldstyle Book" size="24.0" />
                </font>
             </Label>
          </children></AnchorPane>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
          <children>
-            <TableView layoutX="-2.0" layoutY="-3.0" prefHeight="323.0" prefWidth="598.0">
+            <TableView layoutY="-8.0" prefHeight="323.0" prefWidth="598.0">
               <columns>
-                <TableColumn prefWidth="75.0" text="C1" />
-                <TableColumn prefWidth="75.0" text="C2" />
-                  <TableColumn prefWidth="75.0" text="C2" />
-                  <TableColumn prefWidth="75.0" text="C2" />
+                <TableColumn prefWidth="48.0" text="S No." />
+                <TableColumn prefWidth="190.0" text="Name" />
+                  <TableColumn prefWidth="119.0" text="Room Number" />
+                  <TableColumn prefWidth="123.0" text="Arrival Date " />
+                  <TableColumn prefWidth="117.0" text="Departure Date " />
               </columns>
             </TableView>
          </children></AnchorPane>

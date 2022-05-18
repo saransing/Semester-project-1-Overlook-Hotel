@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<SplitPane dividerPositions="0.2022613065326633" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="110.0" prefWidth="598.0" style="-fx-background-color: #E1F2FE;">
+         <children>
+            <Label layoutX="210.0" layoutY="16.0" prefHeight="41.0" prefWidth="282.0" text="      Bookings">
+               <font>
+                  <Font name="Bodoni 72 Oldstyle Book" size="36.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="394.0" prefWidth="598.0" style="-fx-background-color: #E1F2FE #E1F2FE;">
+         <children>
+            <Button fx:id="addBooking" layoutX="337.0" layoutY="13.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="66.0" text="Add Booking" wrapText="true" />
+            <Button fx:id="deleteBooking" layoutX="495.0" layoutY="13.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="66.0" text="Delete Booking" wrapText="true" />
+            <Button fx:id="editBooking" layoutX="415.0" layoutY="13.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="66.0" text="Edit Booking" wrapText="true" />
+            <Label layoutX="35.0" layoutY="27.0" text="Enter name of guest:" />
+            <TableView layoutX="4.0" layoutY="73.0" prefHeight="241.0" prefWidth="590.0" style="-fx-background-color: #ECE4B7;">
+              <columns>
+                <TableColumn prefWidth="75.0" text="S No." />
+                <TableColumn prefWidth="75.0" text="ID" />
+                  <TableColumn prefWidth="75.0" text="Name" />
+                  <TableColumn prefWidth="75.0" text="Arrival Date" />
+                  <TableColumn prefWidth="113.0" text="Departure Date" />
+                  <TableColumn prefWidth="89.0" text="Room No" />
+                  <TableColumn prefWidth="87.0" text="CheckBox" />
+              </columns>
+            </TableView>
+            <TextField layoutX="164.0" layoutY="23.0" />
+         </children></AnchorPane>
+  </items>
+</SplitPane>

@@ -12,14 +12,14 @@ import javafx.scene.layout.Region;
 public class controller {
 
    private Region root;
-   private StudentModelManager modelManager;
+   private HotelModelManager modelManager;
    private ViewHandler viewHandler;
 
 
    @FXML Button arrivals;
    @FXML Button bookings;
-   @FXML Button guest;
-   @FXML Button rooms;
+   @FXML Button checkIn;
+   @FXML Button checkOut;
    @FXML Button exit;
 
    public Region getRoot()
@@ -35,9 +35,9 @@ public class controller {
       }
       else if(e.getSource() == bookings)
       {
-         viewHandler.openView("#");
+         viewHandler.openView("Bookings");
       }
-      else if (e.getSource() == guests)
+      else if (e.getSource() == exit)
       {
          Alert alert = new Alert(Alert.AlertType.CONFIRMATION,
                  "Do you really want to exit the program?",
