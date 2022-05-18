@@ -29,14 +29,51 @@ public class ViewHandler {
         openView("Overlook2");
     }
 
-    private void openView(String id) {
+    public void openView(String id) {
         Region root = null;
         switch (id)
         {
             case "Overlook2":
-                root = load
+                root = loadMainPage();
+                break;
+            case "Arrivals":
+                root = loadArrivals();
+                break;
+            case "Bookings":
+                root = loadBookings();
+            case "CheckIn":
+                root = loadCheckIn();
+                break;
+            case "CheckOut":
+                root = loadCheckOut();
+                break;
         }
     }
+    private Region loadMainPage()
+    {
+        if(controller == null)
+        {
+            try
+            {
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(getClass().getResource("Arrivals.fxml"));
+                Region root = loader.load();
+                controller = loader.getController();
+                controller.init(this, modelManager, root);
+            }
+            catch (IOException e)
+            {
+                e.printStackTrace();
+            }
+        }
+        else
+        {
+            controller.reset();
+        }
+
+        return controller.getRoot();
+    }
+
 
     private Region loadArrivals()
     {
