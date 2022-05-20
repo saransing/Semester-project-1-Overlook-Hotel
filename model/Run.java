@@ -14,11 +14,9 @@ public class Run
     guestList.addGuest(guest1);
     guestList.addGuest(guest2);
 
-    Booking booking = new Booking(new MyDate(13,5,2022), new MyDate(16,5,2022), guestList, new Room("double bed", 14, 2, true, 400), 1);
-
-    Booking booking2 = new Booking(new MyDate(14,5,2022), new MyDate(17,5,2022), guestList, new Room("double bed", 14, 2, true, 400), 2);
-
-    Booking booking3 = new Booking(new MyDate(15,5,2022), new MyDate(18,5,2022), guestList, new Room("double bed", 14, 2, true, 400), 0);
+    Booking booking = new Booking(new MyDate(13,5,2022), new MyDate(16,5,2022), guestList, new Room("double bed", 14, true, 400), 1);
+    Booking booking2 = new Booking(new MyDate(13,5,2022), new MyDate(16,5,2022), guestList, new Room("double bed", 14, true, 400), 1);
+    Booking booking3 = new Booking(new MyDate(13,5,2022), new MyDate(16,5,2022), guestList, new Room("double bed", 14, true, 400), 1);
 
 
     BookingList bookingList = new BookingList();
